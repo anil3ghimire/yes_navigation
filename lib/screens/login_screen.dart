@@ -84,10 +84,10 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {});
       final response = await dio.delete('https://fakestoreapi.com/users/$id');
       if (response.statusCode == 200) {
-        print('${response.data}');
+        // print('${response.data}');
       }
     } catch (e) {
-      print('$e');
+      // print('$e');
     } finally {
       isLoading = false;
       setState(() {});

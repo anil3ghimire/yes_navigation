@@ -21,6 +21,12 @@ Adjust paths above to match the actual repository layout.
 	npm install
 
 2. Run tests:
+git commit -m "first commit"
+git branch -M main
+git branch -M main
+
+git branch -M main
+
 
 	npm test
 
