@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text('LoginScreen')),
+      appBar: AppBar(title: Text('LoginScreen')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -42,7 +42,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-
+            ElevatedButton(
+              onPressed: () async {
+                await userDelete(1);
+              },
+              child: isLoading
+                  ? CircularProgressIndicator()
+                  : Text('Delete User'),
+            ),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -57,19 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                   login(userDetails);
 
-                  // context.go(AppRoutes.product);
+                  context.go(AppRoutes.product);
                 },
                 child: Text('Login'),
               ),
-            ),
-
-            ElevatedButton(
-              onPressed: () async {
-                await userDelete(1);
-              },
-              child: isLoading
-                  ? CircularProgressIndicator()
-                  : Text('Delete User'),
             ),
           ],
         ),
@@ -102,6 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
       var data = response.data;
       print('Token $data');
       context.pushReplacement(AppRoutes.product);
-    } else {}
+    } else {
+      
+    }
   }
 }
