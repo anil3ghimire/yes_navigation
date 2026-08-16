@@ -19,8 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('LoginScreen')),
-
+      // appBar: AppBar(title: Text('LoginScreen')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -84,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {});
       final response = await dio.delete('https://fakestoreapi.com/users/$id');
       if (response.statusCode == 200) {
-        // print('${response.data}');
+        // print('${r /esponse.data}');
       }
     } catch (e) {
       // print('$e');
